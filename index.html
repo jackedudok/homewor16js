@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework16</title>
+    <style>
+        .box1 {
+            display: block;
+            width: 800px;
+            min-height: 250px;
+            background-color: #EAEEF0;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .box2 {
+            display: block;
+            width: 800px;
+            height: 250px;
+            background-color: #EAEEF0;
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            position: relative;
+
+        }
+
+
+
+        .inputs {
+            display: flex;
+            justify-content: space-between;
+            width: 125px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .edit {
+            width: 60px;
+            height: 40px;
+            border: none;
+            background-color: #FFBD00;
+            border-radius: 6px;
+            font-size: 16px;
+
+        }
+
+        .edit:focus {
+            outline: none;
+            border: 3px solid #F6FF00;
+        }
+
+        .edit:hover {
+
+            background-color: #DCA100;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+        }
+
+        .style {
+            width: 60px;
+            height: 40px;
+            border: none;
+            background-color: #0A97BC;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .style:focus {
+
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .style:hover {
+            border: 3px solid #0ECCFC;
+            background-color: #086C85;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+        }
+
+        .textArea {
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        .textArea:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .add {
+            width: 50px;
+            height: 30px;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .add:focus {
+            outline: none;
+            border: 2px solid#E96272;
+
+
+        }
+
+        .save {
+            width: 50px;
+            height: 30px;
+            border: none;
+            background-color: green;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .save:focus {
+            outline: none;
+            border: 2px solid#41EE00;
+
+        }
+
+
+        .box2-a {
+            display: none;
+        }
+
+        .stylesBox2-a {
+            font-size: 17px;
+            font-weight: bold;
+
+        }
+
+        .box2-b {
+            display: none;
+            padding-top: 20px;
+
+        }
+
+        .box {
+            width: 40px;
+            height: 40px;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        .box-colors {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 200px;
+        }
+
+        .box3 {
+            display: none;
+            width: 800px;
+            height: 200px;
+            background-color: #EAEEF0;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .box3-a {
+            display: none;
+        }
+
+        .box3-b {
+            display: none;
+        }
+
+        .countTr {
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 90px;
+            border: none;
+        }
+
+        .countTr:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .countTd {
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 89px;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .countTd:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .widthCountTr {
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 72px;
+            margin-top: 5px;
+            border: none;
+        }
+
+        .widthCountTr:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .heightCountTd {
+            width: 600px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 69px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        .heightCountTd:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .widthborder {
+            width: 65px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 54px;
+            margin-right: 50px;
+            margin-top: 5px;
+            border: none;
+        }
+
+        .widthborder:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .borderStyle {
+            width: 65px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 42px;
+            margin-right: 50px;
+            margin-top: 5px;
+            border: none;
+        }
+
+        .borderStyle:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .borderColor {
+            width: 65px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 42px;
+
+            margin-top: 5px;
+            border: none;
+        }
+
+        .borderColor:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .inputCreateTable {
+            height: 30px;
+            margin-top: 15px;
+            width: 100px;
+            border: none;
+            background-color: #1F9542;
+            color: white;
+            border-radius: 5px;
+
+
+
+        }
+
+        .inputCreateTable:focus {
+            outline: none;
+
+
+        }
+
+        .inputCreateTable:hover {
+            background-color: #135C29;
+
+
+        }
+
+        .inputCreateList {
+            height: 30px;
+            margin-top: 15px;
+            width: 100px;
+            border: none;
+            background-color: #1F9542;
+            color: white;
+            border-radius: 5px;
+
+
+
+        }
+
+        .inputCreateList:focus {
+            outline: none;
+
+
+        }
+
+        .inputCreateList:hover {
+            background-color: #135C29;
+
+
+        }
+
+        .countLi {
+            width: 600px;
+            height: 35px;
+            border-radius: 5px;
+            margin-left: 90px;
+            border: none;
+        }
+
+        .countLi:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .typeOfMarks {
+            width: 604px;
+            height: 35px;
+            border-radius: 5px;
+            margin-left: 55px;
+            border: none;
+            margin-top: 15px;
+        }
+
+        .typeOfMarks:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+
+
+        .select-fontFamily {
+            margin-top: 5px;
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+
+        }
+
+        .select-fontFamily:focus {
+            outline: none;
+            border: 3px solid #0ECCFC;
+        }
+
+        .radioSelect {
+            margin-top: 8px;
+        }
+
+        .inputColors {
+            margin-top: 8px;
+        }
+
+        .Color-of-Text {
+            width: 100px;
+            height: 30px;
+            background-color: #6A757E;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            margin-top: 8px;
+
+        }
+
+        .Color-of-Text:focus {
+            outline: none;
+            border: 2px solid #a5acb3;
+        }
+
+        .Background-of-text {
+            width: 125px;
+            height: 30px;
+            background-color: #6A757E;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            margin-top: 8px;
+        }
+
+        .Background-of-text:focus {
+            outline: none;
+            border: 2px solid#a5acb3;
+        }
+
+        .input-checkbox {
+            margin-top: 8px;
+        }
+
+        .checkbox {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="inputs">
+            <input class="edit" type="button" value="edit">
+            <input class="style" type="button" value="style">
+        </div>
+        <div class="box2">
+            <div class="box2-a">
+                <div>
+                    <textarea class="textArea" name="" id="" cols="90" rows="10"></textarea>
+                </div>
+                <div>
+                    <input class="add " type="button" value="add">
+                    <input class="save" type="button" value="save">
+                </div>
+            </div>
+            <div class="box2-b">
+                <form name="radioBot">
+                    <label for=""><span class="stylesBox2-a">Font Size:</span>
+                        <br>
+                        <input name="font" type="radio" value="12px">12px
+                        <input name="font" type="radio" value="14px">14px
+                        <input name="font" type="radio" value="16px">16px
+                        <input name="font" type="radio" value="18px">18px
+                        <input name="font" type="radio" value="20px">20px
+
+                    </label>
+                </form>
+                <form class="radioSelect" name="radioSelect"><span class="stylesBox2-a">Font Family:</span>
+                    <br>
+                    <select name="" id="" class="select-fontFamily">
+                        <option name="family" value="Choose option">Choose option</option>
+                        <option name="family" value="cursive">cursive</option>
+                        <option name="family" value="fantasy">fantasy</option>
+                        <option name="family" value="monospace">monospace</option>
+                        <option name="family" value="sans-serif">sans-serif</option>
+                    </select>
+                </form>
+
+                <form class="inputColors" name="inputColors"><span class="stylesBox2-a">Colors:</span>
+                    <br>
+                    <input class="Color-of-Text" type="button" value="Color of Text">
+                    <input class="Background-of-text" type="button" value="Background color">
+                </form>
+
+                <div class="box-colors">
+                    <div class="wrapper">
+                        <div class="box cadetblue " style="background-color: cadetblue;"></div>
+                        <div class="box darkred" style="background-color: darkred;"></div>
+                        <div class="box darkseagreen" style="background-color: darkseagreen;"></div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="box green" style="background-color: green;"></div>
+                        <div class="box grey" style="background-color: grey;"></div>
+                        <div class="box indianred" style="background-color: indianred;"></div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="box blue" style="background-color: blue;"></div>
+                        <div class="box darkmagenta" style="background-color: darkmagenta;"></div>
+                        <div class="box darkolivegreen" style="background-color: darkolivegreen;"></div>
+                    </div>
+                </div>
+                <form class="input-checkbox" name="inputStyle"><span class="stylesBox2-a">Style</span>
+                    <br>
+                    <input class="checkbox" type="checkbox">Bold text
+                    <input class="checkbox" type="checkbox">Cursive text
+                </form>
+            </div>
+        </div>
+
+        <div class="box3">
+            <h2>Choose what you want</h2>
+            <form name="inputsTableList">
+                <input name="tableList" type="radio">table
+                <input name="tableList" type="radio">list
+            </form>
+            <div class="box3-a">
+                <form name="count">
+                    <label for="">Count TR:
+                        <input class="countTr" type="text" placeholder="Count TR">
+                    </label>
+                    <br>
+                    <label for="">Count TD:
+                        <input class="countTd" type="text" placeholder="Count TD">
+                    </label>
+                </form>
+                <h3>Add style to your table</h3>
+                <form name="widthCount">
+                    <label for="">Width of TD:
+                        <input class="widthCountTr" type="text">
+                    </label>
+                    <br>
+                    <label for="">Height of TD:
+                        <input class="heightCountTd" type="text">
+                    </label>
+                    <br>
+                    <label for="">Width of border:
+                        <input class="widthborder" type="text">
+                    </label>
+                    <span>Type of border:
+                        <select name="" id="" class="borderStyle">
+                            <option value="solid">solid</option>
+                            <option value="dashed">dashed</option>
+                            <option value="dotted">dotted</option>
+                        </select>
+                    </span>
+                    <span>Color of border:
+                        <select name="" id="" class="borderColor">
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                            <option value="green">green </option>
+                        </select>
+                    </span>
+                    <br>
+                    <input class="inputCreateTable" type="button" value="Create table">
+                </form>
+
+            </div>
+
+            <div class="box3-b">
+                <form name="countList">
+                    <label for="">Count Li:
+                        <input class="countLi" type="text">
+                    </label>
+                    <br>
+                    <span>Type of marks:
+                        <select name="" id="" class="typeOfMarks">
+                            <option value="disc">disc</option>
+                            <option value="circle">circle</option>
+                            <option value="square">square</option>
+                        </select>
+                    </span>
+                    <br>
+                    <input class="inputCreateList" type="button" value="Create list">
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="table">
+
+    </div>
+    <div class="list">
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
